@@ -1,0 +1,1 @@
+@extends('admin.categories.partials._base_category')
