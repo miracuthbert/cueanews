@@ -7,7 +7,7 @@
         <div class="item-col fixed item-col-img md">
             <a href="{{ route('admin.users.edit', [$user]) }}">
                 <div class="item-img rounded"
-                     style="background-image: url(https://s3.amazonaws.com/uifaces/faces/twitter/_everaldo/128.jpg)"></div>
+                     style="background-image: url('{{ $user->avatar() }}')"></div>
             </a>
         </div>
         <div class="item-col fixed pull-left item-col-title">

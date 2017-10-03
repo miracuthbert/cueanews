@@ -61,7 +61,7 @@
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                    aria-haspopup="true" aria-expanded="false">
                     <div class="img"
-                         style="background-image: url('https://avatars3.githubusercontent.com/u/3959008?v=3&s=40')"></div> <span
+                         style="background-image: url('{{ Auth::user()->avatar() }}')"></div> <span
                             class="name">
                         {{ Auth::user()->username != null ? Auth::user()->username : Auth::user()->firstname  }}
     			    </span>
