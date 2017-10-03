@@ -16,11 +16,11 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::get()->toFlatTree();
+        $categories = Category::isActive()->get()->toFlatTree();
 
         return fractal()
             ->collection($categories)
-            ->transformWith( new CategoryTransformer)
+            ->transformWith(new CategoryTransformer)
             ->toArray();
     }
 

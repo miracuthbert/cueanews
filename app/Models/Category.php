@@ -25,6 +25,17 @@ class Category extends Model
     }
 
     /**
+     * Get active categories.
+     *
+     * @param $query
+     * @return mixed
+     */
+    public function scopeIsActive($query)
+    {
+        return $query->where('status', true);
+    }
+
+    /**
      * Fetch posts owned by category.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
