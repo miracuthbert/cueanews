@@ -3,7 +3,12 @@
 namespace App\Exceptions;
 
 use Exception;
+use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Auth\AuthenticationException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use League\OAuth2\Server\Exception\OAuthServerException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class Handler extends ExceptionHandler
 {
@@ -31,7 +36,7 @@ class Handler extends ExceptionHandler
      *
      * This is a great spot to send exceptions to Sentry, Bugsnag, etc.
      *
-     * @param  \Exception  $exception
+     * @param  \Exception $exception
      * @return void
      */
     public function report(Exception $exception)
@@ -42,12 +47,58 @@ class Handler extends ExceptionHandler
     /**
      * Render an exception into an HTTP response.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Exception  $exception
+     * @param  \Illuminate\Http\Request $request
+     * @param  \Exception $exception
      * @return \Illuminate\Http\Response
      */
     public function render($request, Exception $exception)
     {
+
+        if ($request->expectsJson()) {
+            if ($exception instanceof AuthorizationException) {
+                return response()->json([
+                    'data' => [
+                        'error' => 'Unauthorized.',
+                        'message' => 'You cannot perform this action.'
+                    ]
+                ], 403);
+            }
+
+            if ($exception instanceof ModelNotFoundException) {
+                $modelClass = explode('\\', $exception->getModel());
+
+                return response()->json([
+                    'data' => [
+                        'error' => 'Not found.',
+                        'message' => 'The requested ' . strtolower(end($modelClass)) . ' could not be found.'
+                    ]
+                ], 404);
+            }
+
+            if ($exception instanceof NotFoundHttpException) {
+
+                return response()->json([
+                    'data' => [
+                        'error' => 'Not found.',
+                        'message' => 'The requested resource could not be found.'
+                    ]
+                ], 404);
+            }
+        }
         return parent::render($request, $exception);
+    }
+
+    public function unauthenticated($request, AuthenticationException $exception)
+    {
+        if ($request->expectsJson()) {
+            return response()->json([
+                'data' => [
+                    'error' => 'Unauthenticated.',
+                    'message' => 'You have to be logged in first access/perform this action.'
+                ]
+            ], 401);
+        }
+
+        return redirect()->guest(route('login'));
     }
 }
