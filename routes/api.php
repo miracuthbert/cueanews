@@ -27,6 +27,9 @@ Route::resource('categories', 'Api\Category\CategoryController', [
 
 Route::group(['prefix' => 'posts', 'namespace' => 'Api\Post'], function () {
     Route::group(['prefix' => '/{post}'], function () {
+        //download post
+        Route::get('/download', 'PostDownloadController');
+
         //post comments
         Route::resource('comments', 'PostCommentController', [
             'only' => ['index', 'store', 'destroy']
