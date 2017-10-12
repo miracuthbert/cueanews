@@ -27,7 +27,11 @@ class PostCommentController extends Controller
      */
     public function index(Post $post)
     {
-        //
+        $comments =  $post->comments()->latestFirst()->get();
+
+        return fractal()->collection($comments)
+            ->transformWith(new CommentTransformer())
+            ->toArray();
     }
 
     /**
