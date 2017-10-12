@@ -7,7 +7,7 @@
         </div>
         <nav class="menu">
             <ul class="nav metismenu" id="sidebar-menu">
-                <li class="active">
+                <li>
                     <a href="{{ route('admin.dashboard') }}">
                         <i class="fa fa-dashboard"></i> Dashboard
                     </a>
