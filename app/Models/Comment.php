@@ -2,11 +2,15 @@
 
 namespace App\Models;
 
+use App\Traits\Eloquent\OrderableTrait;
+use App\Traits\Eloquent\PivotOrderableTrait;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
 {
+    use OrderableTrait, PivotOrderableTrait;
+
     /**
      * Get all of the owning commentable models.
      */
