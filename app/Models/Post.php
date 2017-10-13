@@ -15,6 +15,13 @@ class Post extends Model
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
     /**
+     * The number of models to return for pagination
+     *
+     * var int
+     */
+    protected $perPage = 100;
+
+    /**
      * Get live post(s).
      *
      * @param $query
