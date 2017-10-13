@@ -38,6 +38,12 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     //dashboard routes
     Route::get('/dashboard', 'DashboardController')->name('admin.dashboard');
 
+    //metrics download route
+    Route::get('/metrics/download', 'Reports\MetricsDownloadController')->name('admin.reports.metrics.download');
+
+    //users download route
+    Route::get('/users/download', 'Reports\UsersDownloadController')->name('admin.reports.users.download');
+
     /**
      * Roles Group Route
      */

@@ -12,7 +12,7 @@
             <div class="row sameheight-container">
                 @include('admin.dashboard.partials._stats')
 
-{{--                @include('admin.dashboard.partials._charts')--}}
+                @include('admin.dashboard.partials._charts')
             </div>
         </section>
 
