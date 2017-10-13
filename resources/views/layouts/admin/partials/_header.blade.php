@@ -11,52 +11,8 @@
             </div>
         </form>
     </div>
-    <div class="header-block header-block-buttons">
-        <a href="" class="btn btn-sm header-btn">
-            <i class="fa fa-github-alt"></i>
-            <span>btn 1</span>
-        </a>
-        <a href="" class="btn btn-sm header-btn">
-            <i class="fa fa-star"></i>
-            <span>btn 2</span>
-        </a>
-        <a href="" class="btn btn-sm header-btn">
-            <i class="fa fa-cloud-download"></i>
-            <span>btn 3</span>
-        </a>
-    </div>
     <div class="header-block header-block-nav">
         <ul class="nav-profile">
-            <li class="notifications new"><a href="" data-toggle="dropdown">
-                    <i class="fa fa-bell-o"></i>
-                    <sup>
-                        <span class="counter">{{ 0 }}</span>
-                    </sup>
-                </a>
-                <div class="dropdown-menu notifications-dropdown-menu">
-                    <ul class="notifications-container">
-                        <li>
-                            <a href="" class="notification-item">
-                                <div class="img-col">
-                                    <div class="img" style="background-image: url({{ url('favicon.ico') }})"></div>
-                                </div>
-                                <div class="body-col">
-                                    <p>
-                                        <span class="accent">Name</span> action: <span class="accent">Title</span>.
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                    <footer>
-                        <ul>
-                            <li><a href="">
-                                    View All
-                                </a></li>
-                        </ul>
-                    </footer>
-                </div>
-            </li>
             <li class="profile dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                    aria-haspopup="true" aria-expanded="false">
