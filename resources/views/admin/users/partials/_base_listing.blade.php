@@ -19,14 +19,10 @@
                 <span class="badge-pill badge-{{ $user->verified() == 1 ? 'success' : 'warning' }}">{{ $user->verified() == 1 ? 'Verified' : 'Not Verified' }}</span>
             </div>
         </div>
-        <div class="item-col item-col-sales">
-            <div class="item-heading">Contacts</div>
-            <div> 4567</div>
-        </div>
         <div class="item-col item-col-stats no-overflow">
-            <div class="item-heading">Listings</div>
+            <div class="item-heading">Posts</div>
             <div class="no-overflow">
-                <div class="item-stats">{{ $user->listings_count }}</div>
+                <div class="item-stats">{{ $user->posts_count }}</div>
             </div>
         </div>
         <div class="item-col item-col-category no-overflow">
@@ -56,7 +52,7 @@
                 <div class="item-actions-block">
                     <ul class="item-actions-list">
                         <li>
-                            <a class="remove" href="#" data-toggle="modal" data-target="#confirm-modal-{{ $user->id }}">
+                            <a class="remove" href="#" data-toggle="modal" {{--data-target="#confirm-modal-{{ $user->id }}"--}}>
                                 <i class="fa fa-trash-o "></i>
                             </a>
 

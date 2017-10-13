@@ -12,7 +12,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <h3 class="title"><i class="fa fa-users"></i> Users
-                            <a href="{{ route('admin.users.create') }}" class="btn btn-primary btn-sm rounded-s"> Add
+                            <a href="{{ route('admin.users.create') }}" class="btn btn-primary btn-sm rounded-s disabled"> Add
                                 New </a>
                             <!-- -->
                             <div class="action dropdown">
@@ -22,10 +22,10 @@
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                     <a class="dropdown-item" href="#"
-                                       onclick="event.preventDefault(); document.getElementById('users-form').submit();">
+                                       onclick="event.preventDefault(); /*document.getElementById('users-form').submit();*/">
                                         <i class="fa fa-message icon"></i> Message
                                     </a>
-                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#confirm-modal">
+                                    <a class="dropdown-item" href="#" data-toggle="modal" {{--data-target="#confirm-modal"--}}>
                                         <i class="fa fa-close icon"></i> Delete
                                     </a>
                                 </div>
@@ -60,11 +60,8 @@
                         <div class="item-col item-col-header item-col-title">
                             <div><span>Name</span></div>
                         </div>
-                        <div class="item-col item-col-header item-col-sales">
-                            <div><span>Sales</span></div>
-                        </div>
                         <div class="item-col item-col-header item-col-stats">
-                            <div class="no-overflow"><span>Listings</span></div>
+                            <div class="no-overflow"><span>Posts</span></div>
                         </div>
                         <div class="item-col item-col-header item-col-category">
                             <div class="no-overflow"><span>Country</span></div>

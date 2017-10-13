@@ -64,97 +64,13 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="listings" class="col-md-4 form-control-label">Listings</label>
+                        <label for="listings" class="col-md-4 form-control-label">Posts</label>
 
                         <div class="col-md-6">
-                            <p class="form-static-control" id="listings">{{ $user->listings->count() }}</p>
+                            <p class="form-static-control" id="listings">{{ $user->posts->count() }}</p>
                         </div>
                     </div>
 
-                </div>
-            </div>
-
-            <div class="card mt-1">
-                <div class="card-header">
-                    <div class="header-block">
-                        <div class="title">Roles</div>
-                    </div>
-                </div>
-                <div class="card-block">
-                    <h6 class="card-subtitle">User roles will appear here.</h6>
-                </div>
-                <div class="card items">
-                    <ul class="item-list striped">
-                        <li class="item item-list-header hidden-sm-down">
-                            <div class="item-row">
-                                <div class="item-col fixed item-col-check"><label class="item-check" id="select-all-items">
-                                        <input type="checkbox" class="checkbox">
-                                        <span></span>
-                                    </label></div>
-                                <div class="item-col item-col-header item-col-title">
-                                    <div> <span>Role</span> </div>
-                                </div>
-                                <div class="item-col item-col-header item-col-date">
-                                    <div class="no-overflow"><span>Since</span></div>
-                                </div>
-                                <div class="item-col item-col-header item-col-date">
-                                    <div><span>Expires At</span></div>
-                                </div>
-                                <div class="item-col item-col-header fixed item-col-actions-dropdown"></div>
-                            </div>
-                        </li>
-
-                        <li class="item">
-                            <div class="item-row">
-                                <div class="item-col fixed item-col-check"> <label class="item-check" id="select-all-items">
-                                        <input type="checkbox" class="checkbox">
-                                        <span></span>
-                                    </label>
-                                </div>
-                                <div class="item-col item-col-title no-overflow">
-                                    <div class="item-heading">Role</div>
-                                    <div>
-                                        <a href="item-editor.html" class="">
-                                            <h4 class="item-title no-wrap"> Role </h4>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="item-col item-col-date">
-                                    <div class="item-heading">Since</div>
-                                    <div class="no-overflow"> 21 SEP 10:45 </div>
-                                </div>
-                                <div class="item-col item-col-date">
-                                    <div class="item-heading">Expires At</div>
-                                    <div class="no-overflow"> - </div>
-                                </div>
-                                <div class="item-col fixed item-col-actions-dropdown">
-                                    <div class="item-actions-dropdown">
-                                        <a class="item-actions-toggle-btn">
-                                            <span class="inactive">
-                                                <i class="fa fa-cog"></i>
-                                            </span>
-                                            <span class="active">
-                                            <i class="fa fa-chevron-circle-right"></i>
-                                            </span>
-                                        </a>
-                                        <div class="item-actions-block">
-                                            <ul class="item-actions-list">
-                                                <li> <a class="remove" href="#" data-toggle="modal" data-target="#confirm-modal">
-                                                        <i class="fa fa-trash-o "></i>
-                                                    </a> </li>
-                                                <li> <a class="edit" href="item-editor.html">
-                                                        <i class="fa fa-pencil"></i>
-                                                    </a> </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <a href="" class="btn btn-secondary">Assign new roles</a>
                 </div>
             </div>
         </form>

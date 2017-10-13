@@ -64,7 +64,6 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return view('admin.users.edit', compact('user'));
     }
 
     /**
@@ -75,7 +74,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view('admin.users.edit', compact('user'));
     }
 
     /**
@@ -98,6 +97,6 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        return "{$user->first_name} blocked successfully!";
+        return back()->withError("Failed deleting {$user->first_name}");
     }
 }
