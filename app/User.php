@@ -131,6 +131,17 @@ class User extends Authenticatable
     }
 
     /**
+     * Check if user has rated post.
+     *
+     * @param Post $post
+     * @return bool
+     */
+    public function hasRatedPost(Post $post)
+    {
+        return $post->ratings->where('user_id', $this->id)->count() === 1;
+    }
+
+    /**
      * Get comments owned by user.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
