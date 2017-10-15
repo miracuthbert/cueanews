@@ -19,4 +19,7 @@
 <!-- Hostel JS -->
 <script src="{{ url('admin/js/custom.js') }}"></script>
 
+<!-- lfm JS -->
+<script src="/vendor/laravel-filemanager/js/lfm.js"></script>
+
 @yield('scripts')
