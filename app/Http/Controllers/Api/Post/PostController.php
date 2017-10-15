@@ -91,7 +91,7 @@ class PostController extends Controller
 
         return fractal()
             ->item($post)
-            ->parseIncludes(['category', 'comments'])
+            ->parseIncludes(['category', 'comments', 'ratings'])
             ->transformWith(new PostTransformer)
             ->toArray();
     }
