@@ -106,6 +106,7 @@
                         <div class="item-col item-col-header item-col-date">
                             <div><span>Published</span></div>
                         </div>
+                        <div class="item-col item-col-header fixed item-col-actions-dropdown"></div>
                     </div>
                 </li>
 

@@ -30,5 +30,41 @@
             <div class="item-heading">Published</div>
             <div> {{ $post->created_at->diffForHumans() }}</div>
         </div>
+        <div class="item-col fixed item-col-actions-dropdown">
+            <div class="item-actions-dropdown">
+                <a class="item-actions-toggle-btn">
+                    <span class="inactive">
+                        <i class="fa fa-cog"></i>
+                    </span>
+                    <span class="active">
+                        <i class="fa fa-chevron-circle-right"></i>
+                    </span>
+                </a>
+                <div class="item-actions-block">
+                    <ul class="item-actions-list">
+                        <li>
+                            <a class="remove" href="#" data-toggle="modal"
+                               data-target="#confirm-modal-{{ $post->id }}">
+                                <i class="fa fa-trash-o "></i>
+                            </a>
+
+                            <form id="posts-destroy-{{ $post->id }}-form"
+                                  action="{{ route('admin.posts.destroy', [$post]) }}"
+                                  method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+                            </form>
+
+                            @include('layouts.admin.partials._confirm_modal', ['modal_id' => "confirm-modal-{$post->id}", 'title' => "Delete Confirmation", 'message' => "Are you sure you want to delete {$post->title}?", 'action' => "posts-destroy-{$post->id}-form"])
+                        </li>
+                        <li>
+                            <a class="edit" href="{{ route('admin.posts.edit', [$post]) }}">
+                                <i class="fa fa-pencil"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 </li>
