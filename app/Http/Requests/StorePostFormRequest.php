@@ -30,7 +30,7 @@ class StorePostFormRequest extends FormRequest
             'body' => [
                 'required',
             ],
-            'image' => ['nullable', 'image', 'mime:jpeg,jpg,png'],
+            'image' => ['nullable'],
             'category' => [
                 'required',
                 Rule::exists('categories', 'id')->where(function ($query) {
