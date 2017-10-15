@@ -35,6 +35,11 @@ Route::group(['prefix' => 'posts', 'namespace' => 'Api\Post'], function () {
             'only' => ['index', 'store', 'destroy']
         ]);
 
+        //post ratings
+        Route::resource('ratings', 'PostRatingController', [
+            'only' => ['store', 'destroy']
+        ]);
+
         //post favourites
         Route::delete('favourites', 'PostFavouriteController@destroy');
 
