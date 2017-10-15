@@ -34,9 +34,9 @@
                              </a>
                            </span>
                             <input id="thumbnail" class="form-control" type="text" name="image"
-                                   value="{{ old('image', $post->image) }}">
+                                   value="{{ old('image') }}">
                         </div>
-                        <img id="holder" style="margin-top:15px;max-height:100px;">
+                        <img id="holder" style="margin-top:15px;max-height:100px;" src="{{ old('image') }}">
                         @if ($errors->has('image'))
                             <span class="help-block">
                                 <strong>{{ $errors->first('image') }}</strong>
