@@ -26,6 +26,26 @@
                     </div>
                 </div><!-- /.form-group -->
                 <div class="form-group row">
+                    <label for="body" class="col-sm-2 form-control-label text-xs-right">Image</label>
+                    <div class="col-sm-10">
+                        <div class="input-group">
+                           <span class="input-group-btn">
+                             <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
+                               <i class="fa fa-picture-o"></i> Choose
+                             </a>
+                           </span>
+                            <input id="thumbnail" class="form-control" type="text" name="image"
+                                   value="{{ old('image', $post->image) }}">
+                        </div>
+                        <img id="holder" style="margin-top:15px;max-height:100px;">
+                        @if ($errors->has('image'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('image') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div><!-- /.form-group -->
+                <div class="form-group row">
                     <label for="body" class="col-sm-2 form-control-label text-xs-right">Body</label>
                     <div class="col-sm-10">
                             <textarea name="body" rows="5" class="form-control boxed" id="body"
@@ -86,6 +106,12 @@
                 </div><!-- /.form-group -->
             </div><!-- /.card -->
         </form>
+    @endsection
+
+    @section('scripts')
+        <script>
+            $('#lfm').filemanager('image');
+        </script>
     @endsection
 
 @endcomponent
