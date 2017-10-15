@@ -154,4 +154,12 @@ class Post extends Model
     {
         return $this->morphMany(Comment::class, 'commentable');
     }
+
+    /**
+     * Get all of the post's ratings.
+     */
+    public function ratings()
+    {
+        return $this->morphMany(Rate::class, 'rateable');
+    }
 }

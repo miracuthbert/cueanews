@@ -8,7 +8,7 @@ use League\Fractal\TransformerAbstract;
 
 class PostTransformer extends TransformerAbstract
 {
-    protected $availableIncludes = ['category', 'comments'];
+    protected $availableIncludes = ['category', 'comments', 'ratings'];
 
     protected $defaultIncludes = ['user'];
 
@@ -27,6 +27,7 @@ class PostTransformer extends TransformerAbstract
             'created_at_human' => $post->created_at->diffForHumans(),
             'views_count' => $post->views(),
             'comments_count' => $post->comments->count(),
+            'ratings_count' => $post->ratings->count(),
         ];
     }
 
@@ -57,5 +58,14 @@ class PostTransformer extends TransformerAbstract
     public function includeComments(Post $post)
     {
         return $this->collection($post->comments, new CommentTransformer);
+    }
+
+    /**
+     * @param Post $post
+     * @return \League\Fractal\Resource\Collection
+     */
+    public function includeRatings(Post $post)
+    {
+        return $this->collection($post->ratings->pluck('user'), new UserTransformer);
     }
 }
