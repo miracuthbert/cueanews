@@ -105,6 +105,27 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     ]);
 
     /**
+     * Posts Group Route
+     */
+    Route::group(['prefix' => '/posts', 'namespace' => 'Post'], function () {
+        Route::group(['prefix' => '/{post}'], function () {
+
+            /**
+             * Comments Resource Route
+             */
+            Route::resource('comments', 'PostCommentController', [
+                'only' => ['index', 'destroy'],
+                'names' => [
+                    'index' => 'admin.comments.index',
+                    'edit' => 'admin.comments.edit',
+                    'destroy' => 'admin.comments.destroy',
+                ]
+            ]);
+
+        });
+    });
+
+    /**
      * Posts Resource Route
      */
     Route::resource('posts', 'Post\PostController', [

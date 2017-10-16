@@ -1,0 +1,1 @@
+@extends('admin.posts.comments.partials._base_comment')

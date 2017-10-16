@@ -100,6 +100,9 @@
                         <div class="item-col item-col-header item-col-stats">
                             <div class="no-overflow"><span>Views</span></div>
                         </div>
+                        <div class="item-col item-col-header item-col-stats">
+                            <div class="no-overflow"><span>Comments</span></div>
+                        </div>
                         <div class="item-col item-col-header item-col-category">
                             <div class="no-overflow"><span>Category</span></div>
                         </div>

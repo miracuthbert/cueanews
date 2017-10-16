@@ -22,7 +22,13 @@
         <div class="item-col item-col-stats">
             <div class="item-heading">Views</div>
             <div class="no-overflow">
-                <div class="item-stats"> {{ 0 }} </div>
+                <div class="item-stats"> {{ $post->views() }} </div>
+            </div>
+        </div>
+        <div class="item-col item-col-stats">
+            <div class="item-heading">Comments</div>
+            <div class="no-overflow">
+                <div class="item-stats"> {{ $post->comments->count() }} </div>
             </div>
         </div>
         {{ $category or '' }}
@@ -60,6 +66,11 @@
                         <li>
                             <a class="edit" href="{{ route('admin.posts.edit', [$post]) }}">
                                 <i class="fa fa-pencil"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="edit" href="{{ route('admin.comments.index', [$post]) }}">
+                                <i class="fa fa-comments"></i>
                             </a>
                         </li>
                     </ul>
