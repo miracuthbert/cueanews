@@ -49,6 +49,16 @@ Route::group(['prefix' => 'posts', 'namespace' => 'Api\Post'], function () {
     });
 });
 
+/**
+ * Posts resource route.
+ */
 Route::resource('posts', 'Api\Post\PostController', [
     'only' => ['index', 'show'],
+]);
+
+/**
+ * Feedbacks resource route.
+ */
+Route::resource('feedbacks', 'Api\Feedback\FeedbackController', [
+    'only' => ['index', 'store', 'destroy'],
 ]);
