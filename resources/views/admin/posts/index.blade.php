@@ -98,6 +98,9 @@
                             <div><span>Author</span></div>
                         </div>
                         <div class="item-col item-col-header item-col-stats">
+                            <div class="no-overflow"><span>Rating</span></div>
+                        </div>
+                        <div class="item-col item-col-header item-col-stats">
                             <div class="no-overflow"><span>Views</span></div>
                         </div>
                         <div class="item-col item-col-header item-col-stats">

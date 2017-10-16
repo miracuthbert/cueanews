@@ -20,6 +20,12 @@
         </div>
         {{ $owner or '' }}
         <div class="item-col item-col-stats">
+            <div class="item-heading">Rating</div>
+            <div class="no-overflow">
+                <div class="item-stats"> {{ $post->averageRating() }} </div>
+            </div>
+        </div>
+        <div class="item-col item-col-stats">
             <div class="item-heading">Views</div>
             <div class="no-overflow">
                 <div class="item-stats"> {{ $post->views() }} </div>
