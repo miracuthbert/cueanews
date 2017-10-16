@@ -27,6 +27,7 @@ class PostTransformer extends TransformerAbstract
             'created_at_human' => $post->created_at->diffForHumans(),
             'views_count' => $post->views(),
             'comments_count' => $post->comments->count(),
+            'rating' => $post->averageRating(),
             'ratings_count' => $post->ratings->count(),
         ];
     }

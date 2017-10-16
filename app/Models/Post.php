@@ -162,4 +162,14 @@ class Post extends Model
     {
         return $this->morphMany(Rate::class, 'rateable');
     }
+
+    /**
+     * Get the post's average rating.
+     */
+    public function averageRating()
+    {
+        $totalRatings = $this->ratings->count();
+        $totalSum = array_sum($this->ratings->pluck('rating')->toArray());
+        return ($totalRatings > 0) ? ($totalSum/$totalRatings) : 0;
+    }
 }
