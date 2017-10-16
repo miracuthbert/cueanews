@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\Post;
 
 use App\Models\Post;
 use App\Models\Rate;
+use App\Transformers\PostTransformer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -57,7 +58,11 @@ class PostRatingController extends Controller
         $rate->rating = $request->rating;
         $post->ratings()->save($rate);
 
-        return response(null, 204);
+        return fractal()
+            ->item($rate->rateable)
+            ->parseIncludes(['category', 'comments', 'ratings'])
+            ->transformWith(new PostTransformer)
+            ->toArray();
     }
 
     /**
