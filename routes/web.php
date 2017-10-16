@@ -140,4 +140,16 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         ]
     ]);
 
+    /**
+     * Feedback Resource Route
+     */
+    Route::resource('feedbacks', 'Feedback\FeedbackController', [
+        'only' => ['index', 'edit', 'destroy'],
+        'names' => [
+            'index' => 'admin.feedbacks.index',
+            'edit' => 'admin.feedbacks.edit',
+            'destroy' => 'admin.feedbacks.destroy',
+        ]
+    ]);
+
 });

@@ -12,6 +12,11 @@
                         <i class="fa fa-dashboard"></i> Dashboard
                     </a>
                 </li>
+                <li>
+                    <a href="{{ route('admin.feedbacks.index') }}">
+                        <i class="fa fa-lightbulb-o"></i> Feedbacks
+                    </a>
+                </li>
                 <li><a href="">
                         <i class="fa fa-universal-access"></i> Roles
                         <i class="fa arrow"></i>

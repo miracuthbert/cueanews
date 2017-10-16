@@ -1,0 +1,1 @@
+@extends('admin.feedbacks.partials._base_feedback')
