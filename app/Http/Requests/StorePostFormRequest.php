@@ -27,6 +27,9 @@ class StorePostFormRequest extends FormRequest
             'title' => [
                 'required', 'max:255',
             ],
+            'excerpt' => [
+                'required', 'max: 50',
+            ],
             'body' => [
                 'required',
             ],

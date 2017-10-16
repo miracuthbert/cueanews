@@ -71,6 +71,7 @@ class PostController extends Controller
     {
         $post = new Post();
         $post->title = $request->input('title');
+        $post->excerpt = $request->input('excerpt');
         $post->body = $request->input('body');
         $post->image = $request->input('image');
         $post->category_id = $request->input('category');
@@ -125,6 +126,7 @@ class PostController extends Controller
     public function update(StorePostFormRequest $request, Post $post)
     {
         $post->title = $request->input('title');
+        $post->excerpt = $request->input('excerpt');
         $post->body = $request->input('body');
 
         if ($request->input('image') != $post->image) {

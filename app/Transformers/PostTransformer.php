@@ -21,6 +21,7 @@ class PostTransformer extends TransformerAbstract
         return [
             'id' => $post->id,
             'title' => $post->title,
+            'excerpt' => $post->excerpt,
             'body' => $post->body,
             'image' => $post->image,
             'created_at' => $post->created_at->toDayDateTimeString(),

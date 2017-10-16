@@ -46,6 +46,18 @@
                     </div>
                 </div><!-- /.form-group -->
                 <div class="form-group row">
+                    <label for="excerpt" class="col-sm-2 form-control-label text-xs-right">Excerpt</label>
+                    <div class="col-sm-10">
+                            <textarea name="excerpt" rows="3" class="form-control boxed" id="excerpt"
+                                      placeholder="Enter Post Excerpt (summary)" maxlength="50">{{ old('excerpt', $post->excerpt) }}</textarea>
+                        @if ($errors->has('excerpt'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('excerpt') }}</strong>
+                                    </span>
+                        @endif
+                    </div>
+                </div><!-- /.form-group -->
+                <div class="form-group row">
                     <label for="body" class="col-sm-2 form-control-label text-xs-right">Body</label>
                     <div class="col-sm-10">
                             <textarea name="body" rows="5" class="form-control boxed" id="body"
