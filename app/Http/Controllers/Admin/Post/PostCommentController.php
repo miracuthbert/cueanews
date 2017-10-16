@@ -25,7 +25,7 @@ class PostCommentController extends Controller
      */
     public function index(Post $post)
     {
-        $comments = $post->comments()->latestFirst()->paginate();
+        $comments = $post->comments()->with('user')->latestFirst()->paginate();
 
         return view('admin.posts.comments.index', compact('post', 'comments'));
     }
