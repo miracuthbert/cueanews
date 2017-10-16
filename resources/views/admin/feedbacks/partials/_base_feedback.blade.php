@@ -22,13 +22,13 @@
                 </a>
 
                 <form id="feedback-destroy-{{ $feedback->id }}-form"
-                      action="{{ route('admin.feedbacks.destroy', [$post, $comment]) }}"
+                      action="{{ route('admin.feedbacks.destroy', [$feedback]) }}"
                       method="POST" style="display: none;">
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
                 </form>
 
-                @include('layouts.admin.partials._confirm_modal', ['modal_id' => "confirm-modal-{$feedback->id}", 'title' => "Delete Confirmation", 'message' => "Are you sure you want to delete '{$feedback->body}' posted by {$feedback->user->first_name}?", 'action' => "feedback-destroy-{$feedback->id}-form"])
+                @include('layouts.admin.partials._confirm_modal', ['modal_id' => "confirm-modal-{$feedback->id}", 'title' => "Delete Confirmation", 'message' => "Are you sure you want to delete this feedback posted by {$feedback->user->first_name}?", 'action' => "feedback-destroy-{$feedback->id}-form"])
             </li>
         </ul>
     </div>
