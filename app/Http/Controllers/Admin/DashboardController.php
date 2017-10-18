@@ -32,7 +32,7 @@ class DashboardController extends Controller
         }, '>', 0)->count();
 
         //posts
-        $posts = Post::with(['category', 'user'])->latestFirst()->paginate();
+        $posts = Post::with(['category', 'user', 'ratings'])->latestFirst()->paginate();
         $total_live_posts = Post::isLive()->count();
 
         return view('admin.dashboard.index', [
