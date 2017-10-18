@@ -14,7 +14,7 @@
                 </li>
                 <li>
                     <a href="{{ route('admin.feedbacks.index') }}">
-                        <i class="fa fa-lightbulb-o"></i> Feedbacks
+                        <i class="fa fa-lightbulb-o"></i> Feedback
                     </a>
                 </li>
                 <li><a href="">

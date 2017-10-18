@@ -63,7 +63,7 @@
                         </div>
                     </progress>
                 </div>
-                <div class="col-12 col-sm-6  stat-col">
+                <div class="col-12 col-sm-6 stat-col">
                     <div class="stat-icon"><i class="fa fa-users"></i></div>
                     <div class="stat">
                         <div class="value"> {{ $users_with_live_posts }}
@@ -79,18 +79,18 @@
                         </div>
                     </progress>
                 </div>
-                {{--<div class="col-12 col-sm-6 stat-col">--}}
-                    {{--<div class="stat-icon"><i class="fa fa-shopping-cart"></i></div>--}}
-                    {{--<div class="stat">--}}
-                        {{--<div class="value"> 80000</div>--}}
-                        {{--<div class="name"> Free posts</div>--}}
-                    {{--</div>--}}
-                    {{--<progress class="progress stat-progress" value="25" max="100">--}}
-                        {{--<div class="progress">--}}
-                            {{--<span class="progress-bar" style="width: 25%;"></span>--}}
-                        {{--</div>--}}
-                    {{--</progress>--}}
-                {{--</div>--}}
+                <div class="col-12 col-sm-6 stat-col">
+                    <div class="stat-icon"><i class="fa fa-lightbulb-o"></i></div>
+                    <div class="stat">
+                        <div class="value"> {{ $feedback }}</div>
+                        <div class="name"> Feedback</div>
+                    </div>
+                    <progress class="progress stat-progress" value="25" max="100">
+                        <div class="progress">
+                            <span class="progress-bar" style="width: 25%;"></span>
+                        </div>
+                    </progress>
+                </div>
                 {{--<div class="col-12 col-sm-6 stat-col">--}}
                     {{--<div class="stat-icon"><i class="fa fa-shopping-cart"></i></div>--}}
                     {{--<div class="stat">--}}

@@ -92,7 +92,7 @@
                         </div>
                         <div class="item-col item-col-header fixed item-col-img xs"></div>
                         <div class="item-col item-col-header item-col-title">
-                            <div><span>Name</span></div>
+                            <div><span>Title</span></div>
                         </div>
                         <div class="item-col item-col-header item-col-author">
                             <div><span>Author</span></div>

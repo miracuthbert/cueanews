@@ -52,7 +52,7 @@
                 <div class="item-actions-block">
                     <ul class="item-actions-list">
                         <li>
-                            <a class="remove" href="#" data-toggle="modal" {{--data-target="#confirm-modal-{{ $user->id }}"--}}>
+                            <a class="remove" href="#" data-toggle="modal" data-target="#confirm-modal-{{ $user->id }}">
                                 <i class="fa fa-trash-o "></i>
                             </a>
 

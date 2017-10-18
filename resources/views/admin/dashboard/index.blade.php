@@ -16,6 +16,12 @@
             </div>
         </section>
 
+        <section class="section">
+            <div class="row sameheight-container">
+                @include('admin.dashboard.partials._listings')
+            </div>
+        </section>
+
     @endsection
 
 @endcomponent

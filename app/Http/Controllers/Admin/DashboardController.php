@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Feedback;
 use App\Models\Post;
 use App\User;
 use Illuminate\Http\Request;
@@ -35,12 +36,16 @@ class DashboardController extends Controller
         $posts = Post::with(['category', 'user', 'ratings'])->latestFirst()->paginate();
         $total_live_posts = Post::isLive()->count();
 
+        //feedback
+        $feedback = Feedback::count();
+
         return view('admin.dashboard.index', [
             'total_users' => $total_users,
             'posts' => $posts,
             'total_live_posts' => $total_live_posts,
             'users_with_posts' => $users_with_posts,
             'users_with_live_posts' => $users_with_live_posts,
+            'feedback' => $feedback,
         ]);
 
     }

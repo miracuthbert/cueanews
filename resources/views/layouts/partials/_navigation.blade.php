@@ -36,11 +36,12 @@
                                 {{ Auth::user()->username != null ? Auth::user()->username : Auth::user()->first_name }}
                                 <span class="caret"></span>
                             </a>
-
                             <ul class="dropdown-menu" role="menu">
-                                <li>
-                                    <a href="{{ route('admin.dashboard') }}">Admin Panel</a>
-                                </li>
+                                @if(Gate::allows('admin-panel-view', \App\Models\Admin::class))
+                                    <li>
+                                        <a href="{{ route('admin.dashboard') }}">Admin Panel</a>
+                                    </li>
+                                @endif
                                 <li>
                                     <a href="{{ route('user.profile') }}">Profile</a>
                                 </li>

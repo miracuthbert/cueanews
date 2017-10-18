@@ -3,21 +3,12 @@
 namespace App\Policies;
 
 use App\User;
+use App\Models\Admin;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class AdminPolicy
 {
     use HandlesAuthorization;
-
-    /**
-     * Create a new policy instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
-    }
 
 
     /**
@@ -28,11 +19,45 @@ class AdminPolicy
      */
     public function view(User $user)
     {
-        $role = $user->roles->count();
+        $roles = $user->roles()->whereNull('expires_at')->count();
 
-        $role = $role > 0 ? true : false;
+        $isAllowed = $roles > 0 ? true : false;
 
-        return $role;
+        return $isAllowed;
     }
 
+    /**
+     * Determine whether the user can create admins.
+     *
+     * @param  \App\User  $user
+     * @return mixed
+     */
+    public function create(User $user)
+    {
+        //
+    }
+
+    /**
+     * Determine whether the user can update the admin.
+     *
+     * @param  \App\User  $user
+     * @param  \App\Models\Admin  $admin
+     * @return mixed
+     */
+    public function update(User $user, Admin $admin)
+    {
+        //
+    }
+
+    /**
+     * Determine whether the user can delete the admin.
+     *
+     * @param  \App\User  $user
+     * @param  \App\Models\Admin  $admin
+     * @return mixed
+     */
+    public function delete(User $user, Admin $admin)
+    {
+        //
+    }
 }
