@@ -16,7 +16,7 @@
         <div class="item-col item-col-category no-overflow">
             <div class="item-heading">Category</div>
             <div class="no-overflow">
-                <a href="{{ route('admin.posts.index', ['category' => $post->category]) }}">{{ $post->category->name }}</a>
+                <a href="{{ route('admin.posts.index', ['category' => $post->category->slug]) }}">{{ $post->category->name }}</a>
             </div>
         </div>
 
