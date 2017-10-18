@@ -22,7 +22,7 @@
         <div class="item-col item-col-stats">
             <div class="item-heading">Rating</div>
             <div class="no-overflow">
-                <div class="item-stats"> {{ $post->averageRating() }} </div>
+                <div class="item-stats"> {{ $post->averageRating() }} by {{ $post->ratings->count() }} readers </div>
             </div>
         </div>
         <div class="item-col item-col-stats">

@@ -28,6 +28,8 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
+        Gate::define('admin-listings-view', 'App\Policies\AdminPolicy@view');
+
         Passport::routes();
     }
 }

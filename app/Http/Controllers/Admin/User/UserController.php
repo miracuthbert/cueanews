@@ -97,6 +97,8 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        return back()->withError("Failed deleting {$user->first_name}");
+        $user->delete();
+
+        return back()->withSuccess("User {$user->username} deleted.");
     }
 }

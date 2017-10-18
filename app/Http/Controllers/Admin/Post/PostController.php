@@ -34,13 +34,13 @@ class PostController extends Controller
         if (isset($category)) {
             $category = Category::where('slug', $category)->firstOrFail();
 
-            $posts = Post::with(['category', 'user'])->fromCategory($category)->latestFirst()->paginate();
+            $posts = Post::with(['category', 'user', 'ratings'])->fromCategory($category)->latestFirst()->paginate();
         } elseif (isset($author)) {
             $author = User::findOrFail($author);
 
-            $posts = Post::with(['category', 'user'])->byAuthor($author)->latestFirst()->paginate();
+            $posts = Post::with(['category', 'user', 'ratings'])->byAuthor($author)->latestFirst()->paginate();
         } else {
-            $posts = Post::with(['category', 'user'])->latestFirst()->paginate();
+            $posts = Post::with(['category', 'user', 'ratings'])->latestFirst()->paginate();
         }
 
         $category = !empty($category->id) ? $category->slug : $category;

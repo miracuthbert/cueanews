@@ -50,6 +50,18 @@
         <td>Users with published posts</td>
         <td>{{ $users_with_live_posts }}</td>
     </tr>
+    <tr>
+        <td>Most rated post</td>
+        <td>{{ $most_rated->title }} ({{ $most_rated->averageRating() }} | {{ $most_rated->ratings_count }} readers)</td>
+    </tr>
+    <tr>
+        <td>Most viewed post</td>
+        <td>{{ $most_viewed->title }} ({{ $most_viewed->viewed_users_count }})</td>
+    </tr>
+    <tr>
+        <td>Total Feedback</td>
+        <td>{{ $feedback }}</td>
+    </tr>
     </tbody>
 </table>
 

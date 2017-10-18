@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin\Reports;
 
+use App\Models\Feedback;
 use App\Models\Post;
 use App\User;
 use Carbon\Carbon;
@@ -38,6 +39,15 @@ class MetricsDownloadController extends Controller
         $total_unpublished_posts = Post::isNotLive()->count();
         $total_live_posts = Post::isLive()->count();
 
+        $most_rated = Post::withCount('ratings')->isLive()->get()->max('ratings_count');
+        $most_rated = Post::withCount('ratings')->isLive()->get()->where('ratings_count', $most_rated)->first();
+
+        $most_viewed = Post::withCount('viewedUsers')->isLive()->get()->max('viewed_users_count');
+        $most_viewed = Post::withCount('viewedUsers')->isLive()->get()->where('viewed_users_count', $most_viewed)->first();
+
+        //feedback
+        $feedback = Feedback::count();
+
         $title = str_slug("Metrics report");
         $pdf = PDF::loadView('admin.reports.metrics', [
             'total_users' => $total_users,
@@ -46,6 +56,9 @@ class MetricsDownloadController extends Controller
             'total_unpublished_posts' => $total_unpublished_posts,
             'users_with_posts' => $users_with_posts,
             'users_with_live_posts' => $users_with_live_posts,
+            'most_rated' => $most_rated,
+            'most_viewed' => $most_viewed,
+            'feedback' => $feedback,
             'date' => Carbon::now()->toDayDateTimeString(),
         ]);
         return $pdf->download("{$title}.pdf");
